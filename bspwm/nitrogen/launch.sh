@@ -1,0 +1,2 @@
+# Start nitrogen
+nitrogen --restore &
