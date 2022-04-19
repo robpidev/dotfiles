@@ -8,6 +8,10 @@
 /Thunar
 /bpytop
 /pulse
-/xface4
+/xfce4
 *.tex
 
+user-dirs
+user-dirs.locale
+mimeapps.list
+QtProject.conf
