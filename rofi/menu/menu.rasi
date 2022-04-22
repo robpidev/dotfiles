@@ -23,8 +23,8 @@ window {
     background-color:                   @bg;
     text-color:                         @fg;
     border:			        0px;
-    border-color:                       @fg;
-    border-radius:                      12px;
+    border-color:                       @ac;
+    border-radius:                      0px;
     width:				30%;
     location:                           center;
     x-offset:                           0;

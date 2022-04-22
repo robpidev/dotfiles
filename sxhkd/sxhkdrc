@@ -162,7 +162,7 @@ super + alt + button1
 
 # ========= Screen Shots =======================
 super + shift + s:
-    scrot -l style=dash,width=1,color="#7c4dff" -s ~/Imágenes/Screenshots/SC-%Y-%m-%d-%T.png -e 'xclip -selection clipboard -t image/png -i $f'
+    scrot -l mode=edge,style=dash,width=1,color="#7c4dff" -s ~/Imágenes/Screenshots/SC-%Y-%m-%d-%T.png -e 'xclip -selection clipboard -t image/png -i $f'
 
 ImpPt
     scrot ~/Imágenes/Screenshots/%Y-%m-%d-%T-screenshot.png
