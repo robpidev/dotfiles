@@ -19,6 +19,10 @@
     {
       "name": "multimedia",
       "icon": "photo-video"
+    },
+    {
+      "name": "apps",
+      "icon": "app-window"
     }
   ]
 }
