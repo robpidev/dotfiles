@@ -21,3 +21,5 @@ set --export PATH $HOME/.surrealdb $PATH
 # iriun xwaland
 alias iriun="QT_QPA_PLATFORM=xcb iriunwebcam"
 
+# Load pacman:
+set -U PACMAN_PROGRESSBAR "pacman"
