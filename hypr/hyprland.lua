@@ -338,8 +338,8 @@ hl.bind(mod .. " + SHIFT + CTRL + L", hl.dsp.window.move({ monitor = "r" }))
 -- === Workspace Navigation ===
 hl.bind(mod .. " + Page_Down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mod .. " + Page_Up", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mod .. " + U", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mod .. " + I", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mod .. " + I", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod .. " + U", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind(mod .. " + CTRL + down", hl.dsp.window.move({ workspace = "e+1" }))
 hl.bind(mod .. " + CTRL + up", hl.dsp.window.move({ workspace = "e-1" }))
@@ -358,8 +358,8 @@ hl.bind(mod .. " + SHIFT + O", hl.dsp.window.move({ workspace = "special:apps" }
 -- === Move window to workspace ===
 hl.bind(mod .. " + SHIFT + Page_Down", hl.dsp.window.move({ workspace = "e+1" }))
 hl.bind(mod .. " + SHIFT + Page_Up", hl.dsp.window.move({ workspace = "e-1" }))
-hl.bind(mod .. " + SHIFT + U", hl.dsp.window.move({ workspace = "e+1" }))
-hl.bind(mod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "e+1" }))
+hl.bind(mod .. " + SHIFT + U", hl.dsp.window.move({ workspace = "e-1" }))
 
 -- === Mouse Wheel Navigation ===
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -427,11 +427,6 @@ hl.bind(mod .. " + A", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call plugin:ass
 hl.bind(mod .. " + SHIFT + Space", function()
   local current = hl.get_config("input.kb_variant")
   local next = current == "intl" and "" or "intl"
-  hl.notification.create({
-    text     = "current: " .. tostring(current) .. " | next: " .. tostring(next),
-    duration = 5000,
-    icon     = "ok"
-  })
   hl.dispatch(
     hl.dsp.exec_cmd(
       'hyprctl eval \'hl.config({ input = { kb_layout = "us", kb_variant = "' .. next .. '" } })\''
