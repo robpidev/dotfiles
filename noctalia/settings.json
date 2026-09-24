@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "comfortable",
+        "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
@@ -14,18 +14,18 @@
         "enableSessionSearch": false,
         "enableSettingsSearch": false,
         "enableWindowsSearch": false,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
         ],
-        "position": "follow_bar",
+        "position": "center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
-        "viewMode": "list"
+        "viewMode": "grid"
     },
     "audio": {
         "mprisBlacklist": [
@@ -45,12 +45,12 @@
         "backgroundOpacity": 0,
         "barType": "simple",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.24,
+        "capsuleOpacity": 0.14,
         "contentPadding": 2,
         "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1,
+        "fontScale": 1.1099999999999999,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
@@ -66,7 +66,7 @@
         "outerCorners": false,
         "position": "right",
         "reverseScroll": false,
-        "rightClickAction": "controlCenter",
+        "rightClickAction": "launcherPanel",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
         "screenOverrides": [
@@ -75,7 +75,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
-        "widgetSpacing": 6,
+        "widgetSpacing": 5,
         "widgets": {
             "center": [
                 {
@@ -180,7 +180,7 @@
                     "colorizeSystemIcon": "none",
                     "colorizeSystemText": "none",
                     "customIconPath": "",
-                    "enableColorization": false,
+                    "enableColorization": true,
                     "icon": "",
                     "id": "ControlCenter",
                     "useDistroLogo": true
@@ -201,7 +201,7 @@
                     "occupiedColor": "secondary",
                     "pillSize": 0.6,
                     "showApplications": false,
-                    "showApplicationsHover": false,
+                    "showApplicationsHover": true,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
@@ -210,7 +210,7 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 300,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "showText": true,
@@ -355,7 +355,7 @@
         "manualSunset": "18:30",
         "monitorForColors": "",
         "predefinedScheme": "Eldritch",
-        "schedulingMode": "off",
+        "schedulingMode": "sunset-sunrise",
         "syncGsettings": true,
         "useWallpaperColors": false
     },
@@ -420,20 +420,29 @@
                     "id": "Notifications"
                 },
                 {
-                    "id": "NightLight"
-                },
-                {
                     "enableOnStateLogic": true,
                     "generalTooltipText": "Asus Profile",
                     "icon": "car-fan-filled",
                     "id": "CustomButton",
-                    "onClicked": "~/.local/bin/asus-profile.sh",
+                    "onClicked": "asusctl profile next",
                     "onMiddleClicked": "",
                     "onRightClicked": "",
-                    "stateChecksJson": "[{\"command\":\"\",\"icon\":\"\"}]"
+                    "showExecTooltip": true,
+                    "stateChecksJson": "[{\"command\":\"asusctl profile get | grep \\\"Active profile: Performance\\\"\",\"icon\":\"brand-onlyfans\"},{\"command\":\"asusctl profile get | grep \\\"Active profile: Balanced\\\"\",\"icon\":\"car-fan\"},{\"command\":\"asusctl profile get | grep \\\"Active profile: Quiet\\\"\",\"icon\":\"car-fan-filled\"}]"
                 },
                 {
                     "id": "plugin:dns-switcher"
+                },
+                {
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "",
+                    "icon": "brand-android",
+                    "id": "CustomButton",
+                    "onClicked": "kitty -e phone",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "showExecTooltip": true,
+                    "stateChecksJson": "[]"
                 }
             ]
         }
@@ -457,7 +466,7 @@
         "colorizeIcons": false,
         "deadOpacity": 0.6,
         "displayMode": "auto_hide",
-        "dockType": "floating",
+        "dockType": "attached",
         "enabled": false,
         "floatingRatio": 1,
         "groupApps": false,
@@ -489,7 +498,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
         "animationDisabled": false,
-        "animationSpeed": 1,
+        "animationSpeed": 2,
         "autoStartAuth": false,
         "avatarImage": "/home/drak/.face",
         "boxRadiusRatio": 1,
@@ -502,7 +511,7 @@
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 1,
+        "iRadiusRatio": 0.99,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -529,13 +538,13 @@
         },
         "language": "",
         "lockOnSuspend": true,
-        "lockScreenAnimations": false,
+        "lockScreenAnimations": true,
         "lockScreenBlur": 0,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "passwordChars": false,
+        "passwordChars": true,
         "radiusRatio": 0.5,
         "reverseScroll": false,
         "scaleRatio": 1,
@@ -578,11 +587,11 @@
     },
     "location": {
         "analogClockInCalendar": false,
-        "autoLocate": true,
+        "autoLocate": false,
         "firstDayOfWeek": -1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
-        "name": "",
+        "name": "chota, peru",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
@@ -800,7 +809,7 @@
         "translucentWidgets": true
     },
     "wallpaper": {
-        "automationEnabled": true,
+        "automationEnabled": false,
         "directory": "/home/drak/Pictures/wp",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
@@ -809,7 +818,7 @@
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
-        "linkLightAndDarkWallpapers": true,
+        "linkLightAndDarkWallpapers": false,
         "monitorDirectories": [
             {
                 "directory": "/home/drak/Pictures/wp",
@@ -823,7 +832,7 @@
         "panelPosition": "follow_bar",
         "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,
-        "showHiddenFiles": false,
+        "showHiddenFiles": true,
         "skipStartupTransition": false,
         "solidColor": "#a48cf2",
         "sortOrder": "name",
